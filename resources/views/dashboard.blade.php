@@ -12,13 +12,17 @@
 </head>
 
 <body>
-    <div class="bg-gray-50 py-24 sm:py-32">
-        <div class="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
+    <div class="bg-gray-50  sm:py-10">
+        <div class="relative mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
+
             <h2 class="text-center text-base/7 font-semibold text-indigo-600">Holla! Admin</h2>
+            <a href="/" class="absolute">
+                <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#000000"><path d="m274-450 248 248-42 42-320-320 320-320 42 42-248 248h526v60H274Z"/></svg>
+            </a>
             <p
-                class="mx-auto mt-2 max-w-lg text-balance text-center text-4xl font-semibold tracking-tight text-gray-950 sm:text-5xl">
+                class="mx-auto  max-w-lg text-balance text-center text-4xl font-semibold tracking-tight text-gray-950 sm:text-5xl">
                 Everything you need to Create a News</p>
-            <div class="mt-10 grid gap-4 sm:mt-16 lg:grid-cols-3 lg:grid-rows-2">
+            <div class="mt-5 grid gap-4 sm:mt-5 lg:grid-cols-3 lg:grid-rows-2">
 
 
                 <div class="relative lg:row-span-2">
@@ -26,6 +30,15 @@
                     <div
                         class="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] lg:rounded-l-[calc(2rem+1px)]">
 
+
+                        <div class="container  mx-auto flex flex-col text-center h-full items-center justify-center font-semibold gap-5  ">
+                            <img
+                                src="/img/pp.jpeg"
+                                alt=""
+                                class="h-60  border-8 border-hijau_utama w-60  rounded-full"
+                            />
+                            <a href>Hello, Admin</a>
+                        </div>
                         
                         {{-- <div class="px-8 pb-3 pt-8 sm:px-10 sm:pb-0 sm:pt-10">
                             <p class="mt-2 text-lg/7 font-medium tracking-tight text-gray-950 max-lg:text-center">News
@@ -53,19 +66,19 @@
 
                 <div class="relative max-lg:row-start-1">
                     <div class="absolute inset-px rounded-lg bg-white max-lg:rounded-t-[2rem]"></div>
+
+
+                   
                     <div
                         class="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] max-lg:rounded-t-[calc(2rem+1px)]">
                         <div class="px-8 pt-8 sm:px-10 sm:pt-10">
-                            <p class="mt-2 text-lg/7 font-medium tracking-tight text-gray-950 max-lg:text-center">
-                                Performance</p>
-                            <p class="mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center">Lorem ipsum, dolor sit
-                                amet consectetur adipisicing elit maiores impedit.</p>
+                            <span class="mt-2 text-3xl font-medium tracking-tight text-gray-950 max-lg:text-center">
+                                Post</span>
+            
                         </div>
                         <div
                             class="flex flex-1 items-center justify-center px-8 max-lg:pb-12 max-lg:pt-10 sm:px-10 lg:pb-2">
-                            <img class="w-full max-lg:max-w-xs"
-                                src="https://tailwindui.com/plus/img/component-images/bento-03-performance.png"
-                                alt="">
+                          <span class="text-5xl">20</span>
                         </div>
                     </div>
                     <div
@@ -81,14 +94,11 @@
                         class="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)]">
                         <div class="px-8 pt-8 sm:px-10 sm:pt-10">
                             <p class="mt-2 text-lg/7 font-medium tracking-tight text-gray-950 max-lg:text-center">
-                                Security</p>
-                            <p class="mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center">Morbi viverra dui mi
-                                arcu sed. Tellus semper adipiscing suspendisse semper morbi.</p>
+                                Create News</p>
+                            <p class="mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center">What Happent Now?</p>
                         </div>
-                        <div class="flex flex-1 items-center [container-type:inline-size] max-lg:py-6 lg:pb-2">
-                            <img class="h-[min(152px,40cqw)] object-cover object-center"
-                                src="https://tailwindui.com/plus/img/component-images/bento-03-security.png"
-                                alt="">
+                        <div class="flex flex-1 items-center justify-center [container-type:inline-size] max-lg:py-6 lg:pb-2">
+                           <a href="/form/post" class="px-10 py-2 bg-blue-500 hover:bg-blue-500/70 shadow-lg shadow-blue-500 transition text-white font-semibold rounded-full ">Create</a>
                         </div>
                     </div>
                     <div class="pointer-events-none absolute inset-px rounded-lg shadow ring-1 ring-black/5"></div>
@@ -100,27 +110,57 @@
                     </div>
                     <div
                         class="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] max-lg:rounded-b-[calc(2rem+1px)] lg:rounded-r-[calc(2rem+1px)]">
-                        <div class="px-8 pb-3 pt-8 sm:px-10 sm:pb-0 sm:pt-10">
+                        <div class="px-8 pb-3 pt-8 sm:px-10 sm:pb-0 sm:pt-10 flex justify-between ">
                             <p class="mt-2 text-lg/7 font-medium tracking-tight text-gray-950 max-lg:text-center">
-                                Powerful APIs</p>
-                            <p class="mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center">Sit quis amet rutrum
-                                tellus ullamcorper ultricies libero dolor eget sem sodales gravida.</p>
+                                Manage Posts</p>
+
+                   
                         </div>
-                        <div class="relative min-h-[30rem] w-full grow">
-                            <div
-                                class="absolute bottom-0 left-10 right-0 top-10 overflow-hidden rounded-tl-xl bg-gray-900 shadow-2xl">
-                                <div class="flex bg-gray-800/40 ring-1 ring-white/5">
-                                    <div class="-mb-px flex text-sm font-medium leading-6 text-gray-400">
-                                        <div
-                                            class="border-b border-r border-b-white/20 border-r-white/10 bg-white/5 px-4 py-2 text-white">
-                                            NotificationSetting.jsx</div>
-                                        <div class="border-r border-gray-600/10 px-4 py-2">App.jsx</div>
+                        <div class="relative max-h-[30rem] w-full ">
+                            <ul role="list" class="divide-y divide-gray-100 flex flex-col gap-2 h-full overflow-y-auto px-5">
+                                @foreach ($posts as $post )
+                                <li class="flex justify-between gap-x-6 py-5 bg-gray-100 px-5 rounded-2xl  shadow-inner">
+                                    <div class="flex min-w-0 gap-x-4">
+                                      <div class="min-w-0 flex-auto">
+                                        <p class="text-sm font-semibold leading-6 text-gray-900">{{ $post['title'] }}</p>
+                                        <p class="mt-1 truncate text-xs leading-5 text-gray-500">leslie.alexander@example.com</p>
+                                      </div>
                                     </div>
-                                </div>
-                                <div class="px-6 pb-14 pt-6">
-                                    <!-- Your code example -->
-                                </div>
-                            </div>
+                                    <div class="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
+                                      <ul class=" flex  gap-1 justify-center items-center ">
+                                      <li>
+                                        
+                                          <a href='/form/post/{{ $post['slug'] }}' class="bg-yellow-500 hover:bg-yellow-500/80 text-white font-light text-sm  px-2 py-1 rounded-full shadow-lg shadow-yellow-500">
+                                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M200-200h57l391-391-57-57-391 391v57Zm-80 80v-170l528-527q12-11 26.5-17t30.5-6q16 0 31 6t26 18l55 56q12 11 17.5 26t5.5 30q0 16-5.5 30.5T817-647L290-120H120Zm640-584-56-56 56 56Zm-141 85-28-29 57 57-29-28Z"/></svg>
+                                        </a>    
+                                      </li>
+                                      <li>
+                                          {{-- <button class="bg-red-500 hover:bg-red-500/80 text-white font-light text-sm px-2 py-1  rounded-full shadow-lg shadow-red-500"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z"/></svg></button>     --}}
+                                      </li>
+                                     
+                                      </ul>
+                                    </div>
+                                  </li>
+                                @endforeach
+                              
+                               
+                               
+                              </ul>
+                              
+                                {{-- <div
+                                    class="absolute bottom-0 left-10 right-0 top-10 overflow-hidden rounded-tl-xl bg-gray-900 shadow-2xl">
+                                    <div class="flex bg-gray-800/40 ring-1 ring-white/5">
+                                        <div class="-mb-px flex text-sm font-medium leading-6 text-gray-400">
+                                            <div
+                                                class="border-b border-r border-b-white/20 border-r-white/10 bg-white/5 px-4 py-2 text-white">
+                                                NotificationSetting.jsx</div>
+                                            <div class="border-r border-gray-600/10 px-4 py-2">App.jsx</div>
+                                        </div>
+                                    </div>
+                                    <div class="px-6 pb-14 pt-6">
+                                        <!-- Your code example -->
+                                    </div>
+                                </div> --}}
                         </div>
                     </div>
                     <div

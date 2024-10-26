@@ -56,8 +56,17 @@
                                     alt="" />
                             </button>
                         </div> --}}
-                        <x-nav-link href="/login" :active="request()->is('login')"><span
-                                class="hover:text-white">Login</span></x-nav-link>
+                        @guest
+                            <x-nav-link href="/login" :active="request()->is('login')">
+                                <span class="hover:text-white">Login</span>
+                            </x-nav-link>
+                        @endguest
+
+                        @auth
+                            <x-nav-link href="/dashboard" :active="request()->is('dashboard')">
+                                <span class="hover:text-white">Dashboard</span>
+                            </x-nav-link>
+                        @endauth
 
                         <div x-show="isOpen" x-transition:enter="transition ease-out duration-100 transform"
                             x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100"

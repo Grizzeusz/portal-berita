@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('kususu');
 
             $table->foreignId(' author_id')->constrained('users');
-            $table->foreignId('category_id')->constrained('categories');
+            // $table->foreignId('category_id')->constrained('categories');
 
             $table->string('slug')->unique();
             $table->text('body');

@@ -15,7 +15,7 @@ Route::get('/blog', function () {
     return view('blog', ['title' => 'Blog', 'posts' => Post::all()]);
 });
 Route::get('/dashboard', function () {
-    return view('dashboard', ['title' => 'Blog',]);
+    return view('dashboard', ['title' => 'Blog', 'posts' => Post::all()]);
 });
 
 
@@ -35,8 +35,8 @@ Route::get('/login', function () {
     return view('auth/login', ['title' => 'profile']);
 });
 
-Route::get('/contact', function () {
-    return view('contact', ['title' => 'Contact']);
+Route::get('/form/post', function () {
+    return view('form');
 });
 
 Route::get('/authors/{user}', function (User $user) {

@@ -27,9 +27,10 @@
 
                 <div class="relative lg:row-span-2">
                     <div class="absolute inset-px rounded-lg bg-white lg:rounded-l-[2rem]"></div>
+                    
                     <div
                         class="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] lg:rounded-l-[calc(2rem+1px)]">
-
+                       
 
                         <div class="container  mx-auto flex flex-col text-center h-full items-center justify-center font-semibold gap-5  ">
                             <img
@@ -38,6 +39,14 @@
                                 class="h-60  border-8 border-hijau_utama w-60  rounded-full"
                             />
                             <a href>Hello, Admin</a>
+                        </div>
+                        <div class="flex justify-center mb-10">
+                            <form action="{{ route('logout') }}" method="POST">
+                                @csrf
+                                <button type="submit" class="px-6 py-2 text-white bg-red-600 rounded-lg shadow-lg hover:bg-red-500 focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-offset-2 transition ease-in-out duration-150">
+                                    Logout
+                                </button>
+                            </form>
                         </div>
                         
                         {{-- <div class="px-8 pb-3 pt-8 sm:px-10 sm:pb-0 sm:pt-10">
@@ -78,7 +87,7 @@
                         </div>
                         <div
                             class="flex flex-1 items-center justify-center px-8 max-lg:pb-12 max-lg:pt-10 sm:px-10 lg:pb-2">
-                          <span class="text-5xl">20</span>
+                          <span class="text-5xl">{{ $posts->count() }}</span>
                         </div>
                     </div>
                     <div
@@ -117,7 +126,13 @@
                    
                         </div>
                         <div class="relative max-h-[30rem] w-full ">
-                            <ul role="list" class="divide-y divide-gray-100 flex flex-col gap-2 h-full overflow-y-auto px-5">
+                            @if(session('success'))
+                            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                {{ session('success') }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                           @endif
+                            <ul role="list" class="divide-y divide-gray-100 flex flex-col gap-2 h-screen overflow-y-auto px-5">
                                 @foreach ($posts as $post )
                                 <li class="flex justify-between gap-x-6 py-5 bg-gray-100 px-5 rounded-2xl  shadow-inner">
                                     <div class="flex min-w-0 gap-x-4">
@@ -127,16 +142,30 @@
                                       </div>
                                     </div>
                                     <div class="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
-                                      <ul class=" flex  gap-1 justify-center items-center ">
-                                      <li>
-                                        
-                                          <a href='/form/post/{{ $post['slug'] }}' class="bg-yellow-500 hover:bg-yellow-500/80 text-white font-light text-sm  px-2 py-1 rounded-full shadow-lg shadow-yellow-500">
+                                      <ul class=" flex flex-wrap w-3/4  gap-1 justify-center items-center ">
+                                      <li class="bg-yellow-500 hover:bg-yellow-500/80 text-white font-light text-sm  px-2 py-1 rounded-full shadow-lg shadow-yellow-500">
+                                        <a href='/form/post/edit/{{ $post['slug'] }}' >
                                             <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M200-200h57l391-391-57-57-391 391v57Zm-80 80v-170l528-527q12-11 26.5-17t30.5-6q16 0 31 6t26 18l55 56q12 11 17.5 26t5.5 30q0 16-5.5 30.5T817-647L290-120H120Zm640-584-56-56 56 56Zm-141 85-28-29 57 57-29-28Z"/></svg>
+                                         </a>    
+                                      </li>
+                                      <li class="bg-red-500 hover:bg-red-500/80 text-white font-light text-sm px-2 py-1 rounded-full shadow-lg shadow-red-500">
+                                        <!-- Form for Delete -->
+                                        <form action="{{ route('post.destroy', $post['slug']) }}" method="POST" onsubmit="return confirm('Apakah kamu yakin ingin menghapus post ini?');">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="flex items-center">
+                                                <!-- Icon for Delete -->
+                                                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
+                                                    <path d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z"/>
+                                                </svg>
+                                            </button>
+                                        </form>
+                                    </li>   
+                                      <li class="bg-green-500 hover:bg-green-500/80 text-white font-light text-sm px-2 py-1  rounded-full shadow-lg shadow-green-500">
+                                        <a href="/blog/id={{ $post['slug'] }}">
+                                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M480-320q75 0 127.5-52.5T660-500q0-75-52.5-127.5T480-680q-75 0-127.5 52.5T300-500q0 75 52.5 127.5T480-320Zm0-72q-45 0-76.5-31.5T372-500q0-45 31.5-76.5T480-608q45 0 76.5 31.5T588-500q0 45-31.5 76.5T480-392Zm0 192q-146 0-266-81.5T40-500q54-137 174-218.5T480-800q146 0 266 81.5T920-500q-54 137-174 218.5T480-200Zm0-300Zm0 220q113 0 207.5-59.5T832-500q-50-101-144.5-160.5T480-720q-113 0-207.5 59.5T128-500q50 101 144.5 160.5T480-280Z"/></svg>
                                         </a>    
-                                      </li>
-                                      <li>
-                                          {{-- <button class="bg-red-500 hover:bg-red-500/80 text-white font-light text-sm px-2 py-1  rounded-full shadow-lg shadow-red-500"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z"/></svg></button>     --}}
-                                      </li>
+                                    </li>
                                      
                                       </ul>
                                     </div>

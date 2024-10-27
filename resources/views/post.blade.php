@@ -7,7 +7,7 @@
         </h2>
 
         <div class="text-base text-gray-400">
-            <a href="#k">{{ $post->author->name }}</a> | {{ $post->created_at->diffForHumans() }}
+             | {{ $post->created_at->diffForHumans() }}
         </div>
         <p class=" my-4 font-light">{{ $post['body'] }}</p>
         <a href="/blog" class="font-medium text-blue-500">&laquo; back to post </a>

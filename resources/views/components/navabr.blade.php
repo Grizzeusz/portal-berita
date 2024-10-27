@@ -57,7 +57,7 @@
                             </button>
                         </div> --}}
                         @guest
-                            <x-nav-link href="/login" :active="request()->is('login')">
+                            <x-nav-link href="{{ route('login') }}" :active="request()->is('login')">
                                 <span class="hover:text-white">Login</span>
                             </x-nav-link>
                         @endguest

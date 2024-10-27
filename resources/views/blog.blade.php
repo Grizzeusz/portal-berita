@@ -16,11 +16,7 @@
                                 {{ $post['title'] }}
                             </h2>
                         </a>
-                        <div class="text-base text-gray-400">
-                            <a class="hover:underline"
-                                href="/authors/{{ $post->author->id }}">{{ $post->author->name }}</a> in <a
-                                class="hover:underline"
-                                href="/categories/{{ $post->category->id }}">{{ $post->category->name_category }}</a> |
+                        <div class="text-base text-gray-400"> |
                             {{ $post->created_at->diffForHumans() }}
                         </div>
                         <p class=" my-4 font-light">{{ Str::limit($post['body'], 50) }}</p>

@@ -7,27 +7,17 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
-    @vite('resources/css/app.css')
-    <title>Halaman Home</title>
+    @vite('resources/css/app.css') <!-- Importing Vite for CSS -->
+    <title>Halaman Home</title> <!-- Page Title -->
 </head>
 
 <body class="h-full">
-    <!--
-  This example requires updating your template:
-
-  ```
-  <html >
-  <body >
-  ```
--->
-    <div class="min-h-full ">
-        <x-navabr></x-navabr>
-
-        {{-- <x-header>{{ $title }}</x-header> --}}
-
+  
+    <div class="min-h-full">
+        <x-navabr></x-navabr> <!-- Navigation bar component -->
         <main>
             <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
-                {{ $slot }}
+                {{ $slot }} <!-- Content from other Blade views will be injected here -->
             </div>
         </main>
     </div>
